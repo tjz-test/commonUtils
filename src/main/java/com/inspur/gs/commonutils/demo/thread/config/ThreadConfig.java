@@ -7,6 +7,9 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 
+/**
+ * @author 14791
+ */
 @Configuration(value = "configtestaa")
 @EnableAsync
 public class ThreadConfig {
@@ -47,7 +50,7 @@ public class ThreadConfig {
         // 设置线程活跃时间（秒）
         executor.setKeepAliveSeconds(60);
         // 设置默认线程名称(自定义)
-        executor.setThreadNamePrefix("threadxxx-");
+        executor.setThreadNamePrefix("thread-");
         // 设置拒绝策略
         //ThreadPoolExecutor.AbortPolicy 默认拒绝策略，丢弃任务并抛出异常
         //ThreadPoolExecutor.DiscardOldestPolicy 丢弃队列最头部（最旧的）的任务，再次执行
@@ -57,6 +60,60 @@ public class ThreadConfig {
         // 等待所有任务结束后再关闭线程池
         executor.setWaitForTasksToCompleteOnShutdown(true);
         return executor;
+    }
+
+    /**
+     * 异步时间线程池
+     */
+    @Bean(name = "DF434BC62938D142E05301CB010A1E92b")
+    public ThreadPoolTaskExecutor eventTaskExecutor(){
+        ThreadPoolTaskExecutor executorEvent = new ThreadPoolTaskExecutor();
+        // 设置核心线程数
+        executorEvent.setCorePoolSize(20);
+        // 设置最大线程数
+        executorEvent.setMaxPoolSize(40);
+        // 设置队列容量
+        executorEvent.setQueueCapacity(1000);
+        // 设置线程活跃时间（秒）
+        executorEvent.setKeepAliveSeconds(60);
+        // 设置默认线程名称(自定义)
+        executorEvent.setThreadNamePrefix("eventThread-");
+        // 设置拒绝策略
+        //ThreadPoolExecutor.AbortPolicy 默认拒绝策略，丢弃任务并抛出异常
+        //ThreadPoolExecutor.DiscardOldestPolicy 丢弃队列最头部（最旧的）的任务，再次执行
+        //ThreadPoolExecutor.CallerRunsPolicy 由调用线程处理任务（同步）
+        //ThreadPoolExecutor.DiscardPolicy 丢弃新任务，不抛出异常
+        executorEvent.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
+        // 等待所有任务结束后再关闭线程池
+        executorEvent.setWaitForTasksToCompleteOnShutdown(true);
+        return executorEvent;
+    }
+
+    /**
+     * 延迟队列线程池
+     */
+    @Bean(name = "DF434BC62938D142E05301CB010A1E92c")
+    public ThreadPoolTaskExecutor delayTaskExecutor(){
+        ThreadPoolTaskExecutor executorDelay = new ThreadPoolTaskExecutor();
+        // 设置核心线程数
+        executorDelay.setCorePoolSize(20);
+        // 设置最大线程数
+        executorDelay.setMaxPoolSize(40);
+        // 设置队列容量
+        executorDelay.setQueueCapacity(1000);
+        // 设置线程活跃时间（秒）
+        executorDelay.setKeepAliveSeconds(60);
+        // 设置默认线程名称(自定义)
+        executorDelay.setThreadNamePrefix("eventThread-");
+        // 设置拒绝策略
+        //ThreadPoolExecutor.AbortPolicy 默认拒绝策略，丢弃任务并抛出异常
+        //ThreadPoolExecutor.DiscardOldestPolicy 丢弃队列最头部（最旧的）的任务，再次执行
+        //ThreadPoolExecutor.CallerRunsPolicy 由调用线程处理任务（同步）
+        //ThreadPoolExecutor.DiscardPolicy 丢弃新任务，不抛出异常
+        executorDelay.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
+        // 等待所有任务结束后再关闭线程池
+        executorDelay.setWaitForTasksToCompleteOnShutdown(true);
+        return executorDelay;
     }
 }
 
