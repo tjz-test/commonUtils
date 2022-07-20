@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationEvent;
 /**
  * @author tjz
  * @date 2022/7/20
- * @description
+ * @description 消息事件
  */
 @Getter
 @Setter
