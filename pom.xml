@@ -279,6 +279,11 @@
             <artifactId>caf-runtime-framework-permission-api</artifactId>
             <version>0.1.8</version>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.21</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
