@@ -5,6 +5,11 @@ import java.io.IOException;
 
 /**
  * @author 14791
+ * <dependency>
+ *     <groupId>com.squareup.okhttp3</groupId>
+ *     <artifactId>okhttp</artifactId>
+ *     <version>3.14.7</version>
+ *  </dependency>
  */
 public class OkHttpsUtils {
 

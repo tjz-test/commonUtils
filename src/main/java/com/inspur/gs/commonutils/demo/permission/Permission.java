@@ -15,6 +15,7 @@ import io.iec.edp.caf.permission.api.manager.runtime.PermissionManager;
  *     <artifactId>caf-runtime-framework-permission-api</artifactId>
  *     <version>0.1.8</version>
  * </dependency>
+ * @author 77165
  */
 public class Permission {
 
