@@ -12,7 +12,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class ResResult<T> implements Serializable {  //该类为api,和web统一的返回格式标准化
+public class Result<T> implements Serializable {  //该类为api,和web统一的返回格式标准化
 
     private static final long serialVersionUID = 8676131899637805509L;
 
@@ -32,8 +32,8 @@ public class ResResult<T> implements Serializable {  //该类为api,和web统一
     /**
      * 成功，创建ResResult：没data数据
      */
-    public static <T> ResResult<T> success() {
-        ResResult<T> result = new ResResult<>();
+    public static <T> Result<T> success() {
+        Result<T> result = new Result<>();
         result.setResultCode(ResultCode.SUCCESS);
         return result;
     }
@@ -41,8 +41,8 @@ public class ResResult<T> implements Serializable {  //该类为api,和web统一
     /**
      * 成功，创建ResResult：有data数据
      */
-    public static <T> ResResult<T> success(T data) {
-        ResResult<T> result = new ResResult<>();
+    public static <T> Result<T> success(T data) {
+        Result<T> result = new Result<>();
         result.setResultCode(ResultCode.SUCCESS);
         result.setData(data);
         return result;
@@ -51,8 +51,8 @@ public class ResResult<T> implements Serializable {  //该类为api,和web统一
     /**
      * 失败，指定status、desc
      */
-    public static <T> ResResult<T> fail(Integer status, String desc) {
-        ResResult<T> result = new ResResult<>();
+    public static <T> Result<T> fail(Integer status, String desc) {
+        Result<T> result = new Result<>();
         result.setStatus(status);
         result.setMessage(desc);
         return result;
@@ -61,8 +61,8 @@ public class ResResult<T> implements Serializable {  //该类为api,和web统一
     /**
      * 失败，指定ResultCode枚举
      */
-    public static <T> ResResult<T> fail(ResultCode resultCode) {
-        ResResult<T> result = new ResResult<>();
+    public static <T> Result<T> fail(ResultCode resultCode) {
+        Result<T> result = new Result<>();
         result.setResultCode(resultCode);
         return result;
     }
