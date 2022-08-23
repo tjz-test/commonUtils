@@ -284,6 +284,11 @@
             <artifactId>druid</artifactId>
             <version>1.1.21</version>
         </dependency>
+        <dependency>
+            <groupId>io.iec.edp</groupId>
+            <artifactId>caf-sumgr-core</artifactId>
+            <version>0.2.9-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

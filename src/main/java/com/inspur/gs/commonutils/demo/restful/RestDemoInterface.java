@@ -8,7 +8,7 @@ import java.util.List;
 @Path("/order")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-public interface RestDemoInterface {
+public interface  RestDemoInterface {
 
     @POST
     @Path("/")
