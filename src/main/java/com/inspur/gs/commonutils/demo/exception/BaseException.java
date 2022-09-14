@@ -16,8 +16,9 @@ import io.iec.edp.caf.commons.exception.ExceptionLevel;
  *    <artifactId>caf-boot-commons-exception</artifactId>
  *    <version>0.3.7</version>
  * </dependency>
+ * @author 77165
  */
-public class CafException extends CAFRuntimeException {
+public class BaseException extends CAFRuntimeException {
 
     /**
      * 传入异常编号和服务单元编号
@@ -27,7 +28,7 @@ public class CafException extends CAFRuntimeException {
      * @param messageParams   提示消息的上下文参数
      * @param innerException  异常类
      */
-    public CafException(String serviceUnitCode, String resourceFile, String exceptionCode, String[] messageParams, Exception innerException) {
+    public BaseException(String serviceUnitCode, String resourceFile, String exceptionCode, String[] messageParams, Exception innerException) {
         super(serviceUnitCode, resourceFile, exceptionCode, messageParams, innerException);
     }
 
@@ -40,7 +41,7 @@ public class CafException extends CAFRuntimeException {
      * @param innerException  异常类
      * @param level           异常级别
      */
-    public CafException(String serviceUnitCode, String resourceFile, String exceptionCode, String[] messageParams, Exception innerException, ExceptionLevel level) {
+    public BaseException(String serviceUnitCode, String resourceFile, String exceptionCode, String[] messageParams, Exception innerException, ExceptionLevel level) {
         super(serviceUnitCode, resourceFile, exceptionCode, messageParams, innerException, level);
     }
 
@@ -54,7 +55,7 @@ public class CafException extends CAFRuntimeException {
      * @param level           异常级别
      * @param bizException    是否业务异常
      */
-    public CafException(String serviceUnitCode, String resourceFile, String exceptionCode, String[] messageParams, Exception innerException, ExceptionLevel level, boolean bizException) {
+    public BaseException(String serviceUnitCode, String resourceFile, String exceptionCode, String[] messageParams, Exception innerException, ExceptionLevel level, boolean bizException) {
         super(serviceUnitCode, resourceFile, exceptionCode, messageParams, innerException, level, bizException);
     }
 
@@ -65,7 +66,7 @@ public class CafException extends CAFRuntimeException {
      * @param message         异常消息
      * @param innerException  异常类
      */
-    public CafException(String serviceUnitCode, String exceptionCode, String message, Exception innerException) {
+    public BaseException(String serviceUnitCode, String exceptionCode, String message, Exception innerException) {
         super(serviceUnitCode, exceptionCode, message, innerException);
     }
 
@@ -77,7 +78,7 @@ public class CafException extends CAFRuntimeException {
      * @param innerException  异常类
      * @param level           异常级别
      */
-    public CafException(String serviceUnitCode, String exceptionCode, String message, Exception innerException, ExceptionLevel level) {
+    public BaseException(String serviceUnitCode, String exceptionCode, String message, Exception innerException, ExceptionLevel level) {
         super(serviceUnitCode, exceptionCode, message, innerException, level);
     }
 
@@ -90,7 +91,7 @@ public class CafException extends CAFRuntimeException {
      * @param level           异常级别
      * @param bizException    是否业务异常
      */
-    public CafException(String serviceUnitCode, String exceptionCode, String message, Exception innerException, ExceptionLevel level, boolean bizException) {
+    public BaseException(String serviceUnitCode, String exceptionCode, String message, Exception innerException, ExceptionLevel level, boolean bizException) {
         super(serviceUnitCode, exceptionCode, message, innerException, level, bizException);
     }
 }
